@@ -1,0 +1,284 @@
+/* Reset & Base Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 16px;
+    overflow-x: hidden;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Styling & Entry Animation */
+.login-card {
+    background: #ffffff;
+    padding: clamp(24px, 5vw, 40px) clamp(18px, 4vw, 32px);
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    
+    animation: cardSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Page Exit Transition */
+.page-exit {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+}
+
+.login-card h2 {
+    color: #1a1a1a;
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* Social Buttons */
+.social-login {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 12px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Divider Line */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #a0aec0;
+    font-size: clamp(10px, 2.5vw, 12px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+    padding: 0 8px;
+    white-space: nowrap;
+}
+
+/* Inputs & Form Groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #2d3748;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+    transform: scale(1.01);
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 60px !important;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 12px;
+    height: 100%;
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.toggle-password-btn:hover {
+    color: #764ba2;
+    transform: scale(1.05);
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.checkbox-group input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+.checkbox-group label {
+    color: #4a5568;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #667eea;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #764ba2;
+    transform: translateX(2px);
+}
+
+.back-to-login .forgot-link:hover {
+    transform: translateX(-3px);
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    width: 100%;
+    min-height: 46px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.submit-btn:hover {
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.45);
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes cardSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 360px) {
+    .social-login { flex-direction: column; }
+    .form-options { flex-direction: column; align-items: flex-start; }
+}
